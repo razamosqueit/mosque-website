@@ -1,0 +1,76 @@
+.header {
+    background-color: var(--mantine-color-body);
+    border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}
+
+.inner {
+    display: flex;
+    align-items: end;
+    justify-content: space-evenly;
+
+    @media (max-width: $mantine-breakpoint-sm) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.link {
+    display: block;
+    line-height: 1;
+    padding: rem(8px) rem(12px);
+    border-radius: var(--mantine-radius-sm);
+    text-decoration: none;
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+    font-size: var(--mantine-font-size-sm);
+    font-weight: 500;
+
+@mixin hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+}
+
+[data-mantine-color-scheme] &[data-active] {
+                                 background-color: var(--mantine-color-blue-filled);
+                                 color: var(--mantine-color-white);
+                             }
+}
+
+
+.mainLink {
+    text-transform: uppercase;
+    font-size: var(--mantine-font-size-xs);
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-1));
+    padding: rem(7px) var(--mantine-spacing-sm);
+    font-weight: 700;
+    border-bottom: rem(2px) solid transparent;
+    transition:
+            border-color 100ms ease,
+            color 100ms ease;
+
+@mixin hover {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    text-decoration: none;
+}
+
+&[data-active] {
+     color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+     border-bottom-color: var(--mantine-color-blue-6);
+ }
+}
+
+.secondaryLink {
+    color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-1));
+    font-size: var(--mantine-font-size-xs);
+    text-transform: uppercase;
+    transition: color 100ms ease;
+
+@mixin hover {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    text-decoration: none;
+}
+}
