@@ -1,7 +1,5 @@
 {
-  "name": "mantine-next-template",
-  "version": "1.0.0",
-  "private": true,
+  "name": "raza-mosque-template",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
