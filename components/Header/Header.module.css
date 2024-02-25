@@ -31,7 +31,7 @@
     font-weight: 500;
 
 @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+    background-color: light-dark(var(--mantine-color-islamic-green-0), var(--mantine-color-islamic-green-9));
 }
 
 [data-mantine-color-scheme] &[data-active] {

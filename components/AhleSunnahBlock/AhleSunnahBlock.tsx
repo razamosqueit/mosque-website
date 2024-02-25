@@ -1,4 +1,4 @@
-import {Text, Title} from '@mantine/core';
+import { Text, Title } from '@mantine/core';
 import classes from './AhleSunnahBlock.module.css';
 
 export const AhleSunnahBlock = () => (

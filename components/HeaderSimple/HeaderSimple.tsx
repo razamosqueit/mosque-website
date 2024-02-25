@@ -1,4 +1,4 @@
-import { Button, Container, Image, Menu, Text, useMantineColorScheme } from '@mantine/core';
+import { Button, Container, Image, Menu, useMantineColorScheme } from '@mantine/core';
 import Link from 'next/link';
 import classes from './HeaderSimple.module.css';
 import { AhleSunnahBlock } from '@/components/AhleSunnahBlock/AhleSunnahBlock';
