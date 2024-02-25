@@ -33,11 +33,6 @@
     font-weight: 900;
 }
 
-.image {
-    width: rem(376px);
-    height: rem(356px);
-}
-
 .highlight {
     position: relative;
     background-color: var(--mantine-color-blue-light);

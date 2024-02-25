@@ -6,7 +6,6 @@ import {
     Container,
     Drawer,
     Group,
-    Image,
     Menu,
     rem,
     ScrollArea,
@@ -14,6 +13,7 @@ import {
     useMantineColorScheme,
 } from '@mantine/core';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
 import { AhleSunnahBlock } from '@/components/AhleSunnahBlock/AhleSunnahBlock';
@@ -70,13 +70,13 @@ export const Header = () => {
     const { colorScheme } = useMantineColorScheme();
     const [opened, { toggle, close }] = useDisclosure(false);
     const [openedAboutUs, { toggle: toggleAboutUs }] = useDisclosure(false);
-    const logo = colorScheme === 'light' ? '/mosque_green.png' : '/mosque_white.png';
+    const logo = colorScheme === 'light' ? '/images/mosque_green.png' : '/images/mosque_white.png';
 
     return (
         <header className={classes.header}>
             <Container fluid className={classes.inner}>
                 <Link href="/">
-                    <Image src={logo} w="175px" h="175px" />
+                    <Image src={logo} width={175} height={175} alt="logo" />
                 </Link>
                 <AhleSunnahBlock />
                 <Box className={classes.links}>

@@ -10,7 +10,3 @@
     background: var(--mantine-color-islamic-gold-5);
     padding-bottom: calc(var(--mantine-spacing-md) * 4);
 }
-
-.image {
-    height: rem(150px);
-}

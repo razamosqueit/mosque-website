@@ -1,12 +1,13 @@
-import { Image, Container, Title, Text } from '@mantine/core';
+import { Container, Title, Text } from '@mantine/core';
+import Image from 'next/image';
 import classes from './Welcome.module.css';
 
 export function Welcome() {
-    const logo = '/mosque_white.png';
+    const logo = '/images/mosque_white.png';
     return (
         <Container fluid className={classes.root}>
             <div className={classes.inner}>
-                <Image src={logo} className={classes.image} />
+                <Image src={logo} alt="logo" width={376} height={356} />
                 <div className={classes.content}>
                     <Title className={classes.title}>
                         Our Goal Is To Serve Humanity

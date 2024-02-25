@@ -1,14 +1,15 @@
-import { Image, Container } from '@mantine/core';
+import { Container } from '@mantine/core';
+import Image from 'next/image';
 import classes from './Footer.module.css';
 
 export function Footer() {
-    const logo = '/mosque_white.png';
+    const logo = '/images/mosque_white.png';
     return (
         <>
-        <Container fluid className={classes.divider} />
-        <Container fluid className={classes.root}>
-                <Image src={logo} className={classes.image} />
-        </Container>
+            <Container fluid className={classes.divider} />
+            <Container fluid className={classes.root}>
+                <Image src={logo} alt="logo" height={150} width={150} />
+            </Container>
         </>
     );
 }
