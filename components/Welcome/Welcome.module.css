@@ -33,6 +33,13 @@
     font-weight: 900;
 }
 
+.image {
+    @media (max-width: $mantine-breakpoint-xs) {
+        width: 80%;
+        height: 80%;
+    }
+}
+
 .highlight {
     position: relative;
     background-color: var(--mantine-color-blue-light);

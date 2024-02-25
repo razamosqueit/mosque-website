@@ -7,7 +7,7 @@ export function Welcome() {
     return (
         <Container fluid className={classes.root}>
             <div className={classes.inner}>
-                <Image src={logo} alt="logo" width={376} height={356} />
+                <Image className={classes.image} src={logo} alt="logo" width={356} height={356} />
                 <div className={classes.content}>
                     <Title className={classes.title}>
                         Our Goal Is To Serve Humanity
