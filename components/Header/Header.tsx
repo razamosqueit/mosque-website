@@ -17,6 +17,7 @@ import Image from 'next/image';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
 import { AhleSunnahBlock } from '@/components/AhleSunnahBlock/AhleSunnahBlock';
+import { DailyTimetable } from '@/components/DailyTimetable/DailyTimetable';
 
 // eslint-disable-next-line max-len
 const getMobileDrawer = (opened: boolean, close: () => void, toggleAboutUs: () => void, openedAboutUs: boolean) =>
@@ -79,6 +80,7 @@ export const Header = () => {
                 </Link>
                 <AhleSunnahBlock />
                 <Box className={classes.links}>
+                    <DailyTimetable />
                     <Group gap={0} justify="flex-end" className={classes.mainLinks} visibleFrom="sm">
                         <Anchor<'a'>
                           className={classes.mainLink}
