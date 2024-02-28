@@ -6,3 +6,41 @@
         font-size: var(--mantine-font-size-sm);
     }
 }
+
+.styledTable {
+    border-collapse: collapse;
+    font-size: var(--mantine-font-size-sm);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 50%;
+}
+
+.styledTable thead tr {
+    background-color: var(--mantine-color-islamic-green-9);
+    color: var(--mantine-color-white);
+    text-align: left;
+}
+
+.styledTable th,
+.styledTable td {
+    padding: var(--mantine-spacing-xs);
+    @media (max-width: calc($mantine-breakpoint-xs * 0.65)) {
+        font-size: calc(var(--mantine-spacing-xs)*0.9);
+    }
+}
+
+.styledTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styledTable tbody tr:nth-of-type(even) {
+    background-color: var(--mantine-color-gray-2);
+}
+
+.styledTable tbody tr:last-of-type {
+    border-bottom: 2px solid var(--mantine-color-islamic-green-9);;
+}
+
+.styledTable tbody tr.activeRow {
+    font-weight: bold;
+    color: var(--mantine-color-islamic-green-9);;
+}

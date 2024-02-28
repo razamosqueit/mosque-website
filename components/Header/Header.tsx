@@ -17,6 +17,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import { useDisclosure } from '@mantine/hooks';
+import { ReactElement } from 'react';
 import classes from './Header.module.css';
 import { AhleSunnahBlock } from '@/components/AhleSunnahBlock/AhleSunnahBlock';
 import { DailyTimetable } from '@/components/DailyTimetable/DailyTimetable';
@@ -68,7 +69,7 @@ const getMobileDrawer = (opened: boolean, close: () => void, toggleAboutUs: () =
         </ScrollArea>
     </Drawer>;
 
-export const Header = () => {
+export const Header = ({ dailyTimetable }: { dailyTimetable: ReactElement<typeof DailyTimetable> }) => {
     const { colorScheme } = useMantineColorScheme();
     const [opened, { toggle, close }] = useDisclosure(false);
     const [openedAboutUs, { toggle: toggleAboutUs }] = useDisclosure(false);
@@ -82,7 +83,7 @@ export const Header = () => {
                 </Link>
                 <AhleSunnahBlock />
                 <Box className={classes.links}>
-                    <DailyTimetable />
+                    {dailyTimetable}
                     <Group gap={0} justify="flex-end" className={classes.mainLinks} visibleFrom="sm">
                         <Anchor<'a'>
                           className={classes.mainLink}
