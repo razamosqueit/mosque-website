@@ -1,9 +1,15 @@
 import { Text } from '@mantine/core';
 import classes from './DailyTimetable.module.css';
+import { getMonthlyTimetable } from '@/lib/read-timetable';
 
-export const DailyTimetable = () => {
-    const englishDate = '30 September 2024';
-    const islamicDate = '30 Jamada Al-Awwal 2024';
+export const DailyTimetable = async () => {
+    const date = new Date();
+    const month = date.toLocaleString('default', { month: 'long' }).toLowerCase();
+    const year = date.getFullYear();
+    const timetable = await getMonthlyTimetable(month, year);
+    const englishDate = date.toDateString();
+    const dailyRecord = timetable![date.getDate()];
+    const islamicDate = `${dailyRecord.IslamicDate} ${dailyRecord.IslamicMonth} ${year}`;
     return (
         <>
             <div>
@@ -14,7 +20,7 @@ export const DailyTimetable = () => {
                 <tr>
                     <th />
                     <th>Fajr</th>
-                    <th>Jummah</th>
+                    <th>{dailyRecord.Day === 'Fri' ? 'Jummah' : 'Zuhr'}</th>
                     <th>Asr</th>
                     <th>Maghrib</th>
                     <th>Isha</th>
@@ -23,19 +29,19 @@ export const DailyTimetable = () => {
                 <tbody>
                 <tr className={classes.activeRow}>
                     <td>Begins</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>11</td>
-                    <td>12</td>
+                    <td>{dailyRecord.FajrBeg}</td>
+                    <td>{dailyRecord.ZoharBeg}</td>
+                    <td>{dailyRecord.AsarBeg}</td>
+                    <td>{dailyRecord.MagribAzan}</td>
+                    <td>{dailyRecord.IshaAzan}</td>
                 </tr>
                 <tr className={classes.activeRow}>
                     <td>Jamat</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>11</td>
-                    <td>12</td>
+                    <td>{dailyRecord.FajrAzan}</td>
+                    <td>{dailyRecord.ZoharJumaAzan}</td>
+                    <td>{dailyRecord.AsarAzan}</td>
+                    <td>{dailyRecord.MagribAzan}</td>
+                    <td>{dailyRecord.IshaAzan}</td>
                 </tr>
                 </tbody>
             </table>

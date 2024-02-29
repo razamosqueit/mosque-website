@@ -23,7 +23,7 @@
 .styledTable th,
 .styledTable td {
     padding: var(--mantine-spacing-xs);
-    @media (max-width: calc($mantine-breakpoint-xs * 0.65)) {
+    @media (max-width: calc($mantine-breakpoint-xs * 0.73)) {
         font-size: calc(var(--mantine-spacing-xs)*0.9);
     }
 }
